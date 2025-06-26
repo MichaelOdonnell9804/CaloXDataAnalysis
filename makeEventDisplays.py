@@ -233,6 +233,7 @@ def makeEventDisplays(infilename, random_per_block=None, block_size=100,
         random_per_block=random_per_block,
         block_size=block_size,
         nth_interval=nth_interval,
+        group_size=2,
     )
     generate_html(
         plots_pulse_shapes,

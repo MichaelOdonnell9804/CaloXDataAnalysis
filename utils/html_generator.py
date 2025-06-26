@@ -1,8 +1,16 @@
 import os
 
 
-def generate_html(png_files, png_dir, plots_per_row=4, output_html="view_plots.html",
-                  random_per_block=None, block_size=100, nth_interval=None):
+def generate_html(
+    png_files,
+    png_dir,
+    plots_per_row=4,
+    output_html="view_plots.html",
+    random_per_block=None,
+    block_size=100,
+    nth_interval=None,
+    group_size=1,
+):
     """
     Generate an HTML file to view PNG plots in a grid layout.
 
@@ -16,6 +24,9 @@ def generate_html(png_files, png_dir, plots_per_row=4, output_html="view_plots.h
     - block_size (int): size of the block used for ``random_per_block``
     - nth_interval (int or None): if set, also include every ``nth_interval``-th
       plot in the HTML output
+    - group_size (int): treat every ``group_size`` consecutive plots as a group
+      when applying ``random_per_block`` and ``nth_interval`` sampling. Useful
+      for cases where multiple images represent a single event.
     """
 
     html_dir = os.path.dirname(os.path.abspath(output_html))
@@ -25,18 +36,36 @@ def generate_html(png_files, png_dir, plots_per_row=4, output_html="view_plots.h
     n_files = len(png_files)
     indices = set()
 
+    if group_size < 1:
+        group_size = 1
+
+    n_groups = (n_files + group_size - 1) // group_size
+
+    def expand_groups(groups):
+        """Convert group indices to file indices respecting group size."""
+        out = []
+        for g in groups:
+            start = g * group_size
+            end = min(start + group_size, n_files)
+            out.extend(range(start, end))
+        return out
+
     if nth_interval and nth_interval > 0:
-        indices.update(range(0, n_files, nth_interval))
+        groups = range(0, n_groups, nth_interval)
+        indices.update(expand_groups(groups))
 
     if random_per_block and block_size and random_per_block > 0:
         import random
-        for start in range(0, n_files, block_size):
-            end = min(start + block_size, n_files)
-            count = min(random_per_block, end - start)
-            indices.update(random.sample(range(start, end), count))
+        block_groups = (n_groups + block_size - 1) // block_size
+        for block in range(block_groups):
+            g_start = block * block_size
+            g_end = min(g_start + block_size, n_groups)
+            g_count = min(random_per_block, g_end - g_start)
+            chosen = random.sample(range(g_start, g_end), g_count)
+            indices.update(expand_groups(chosen))
 
     if indices:
-        indices = sorted(indices)
+        indices = sorted(i for i in indices if i < n_files)
         png_files = [png_files[i] for i in indices]
 
     png_paths = [os.path.join(png_dir, f) for f in png_files]
