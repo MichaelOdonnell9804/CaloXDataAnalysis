@@ -19,7 +19,21 @@ runNumber = 624
 outdir = f"plots/Run{runNumber}/"
 
 
-def makeEventDisplays(infilename):
+def makeEventDisplays(infilename, random_per_block=None, block_size=100,
+                      nth_interval=None):
+    """Generate event and pulse-shape displays.
+
+    Parameters
+    ----------
+    infilename : str
+        Input ROOT file containing the event tree.
+    random_per_block : int or None, optional
+        Number of random events to include in every ``block_size`` events.
+    block_size : int, optional
+        Block size used for ``random_per_block``.
+    nth_interval : int or None, optional
+        Additionally include every ``nth_interval``-th event.
+    """
     start_time = time.time()
     infile = ROOT.TFile(infilename, "READ")
     if not infile or infile.IsZombie():
@@ -44,11 +58,22 @@ def makeEventDisplays(infilename):
     iTowerY_max = 10.5
     iTowerY_min = -9.5
 
-    # Limit to first 30 events (or fewer if file is smaller)
     nevents = tree.GetEntries()
-    nproc = min(nevents, 100)
 
-    for ievt in range(nproc):
+    indices = set()
+    if nth_interval and nth_interval > 0:
+        indices.update(range(0, nevents, nth_interval))
+    if random_per_block and block_size and random_per_block > 0:
+        import random
+        for start in range(0, nevents, block_size):
+            end = min(start + block_size, nevents)
+            count = min(random_per_block, end - start)
+            indices.update(random.sample(range(start, end), count))
+    if not indices:
+        nproc = min(nevents, 100)
+        indices.update(range(nproc))
+
+    for ievt in sorted(indices):
         print(f"Processing event {ievt + 1} of {nevents}")
         tree.GetEntry(ievt)
         evtNumber = int(tree.event_n)
@@ -200,10 +225,23 @@ def makeEventDisplays(infilename):
     print(f"Events left after filtering: {nevents}")
 
     # Generate HTML viewers
-    generate_html(plots_eventdisplay, outdir_eventdisplay,
-                  plots_per_row=2, output_html="html/event_display/viewer.html")
-    generate_html(plots_pulse_shapes, outdir_pulse_shapes,
-                  output_html="html/pulse_shapes/viewer.html")
+    generate_html(
+        plots_eventdisplay,
+        outdir_eventdisplay,
+        plots_per_row=2,
+        output_html="html/event_display/viewer.html",
+        random_per_block=random_per_block,
+        block_size=block_size,
+        nth_interval=nth_interval,
+    )
+    generate_html(
+        plots_pulse_shapes,
+        outdir_pulse_shapes,
+        output_html="html/pulse_shapes/viewer.html",
+        random_per_block=random_per_block,
+        block_size=block_size,
+        nth_interval=nth_interval,
+    )
 
     # Save histograms out to ROOT files
     ofilename = infilename.replace(".root", "_event_display.root")
@@ -226,6 +264,26 @@ def makeEventDisplays(infilename):
 
 
 if __name__ == "__main__":
-    input_file = "run0624_250611172809.root"
-    print(f"Processing file: {input_file}")
-    makeEventDisplays(input_file)
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate event displays")
+    parser.add_argument("input_file", help="Input ROOT file")
+    parser.add_argument("--random-per-block", type=int, default=None,
+                        dest="random_per_block",
+                        help="Number of random events to display per block")
+    parser.add_argument("--block-size", type=int, default=100,
+                        dest="block_size",
+                        help="Block size used for random sampling")
+    parser.add_argument("--nth-interval", type=int, default=None,
+                        dest="nth_interval",
+                        help="Additionally display every nth event")
+
+    args = parser.parse_args()
+
+    print(f"Processing file: {args.input_file}")
+    makeEventDisplays(
+        args.input_file,
+        random_per_block=args.random_per_block,
+        block_size=args.block_size,
+        nth_interval=args.nth_interval,
+    )
