@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PNG Plot Viewer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .top-link {
+      margin-bottom: 15px;
+    }
+
+    .top-link a {
+      font-size: 16px;
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    .path-info {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    input {
+      font-size: 16px;
+      padding: 5px;
+      width: 400px;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .plot {
+      border: 1px solid #ccc;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .filename {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+      word-break: break-word;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 1200px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-link">
+    <a href="../">⬆️ Go Up One Directory</a>
+  </div>
+
+  <h1>PNG Plot Viewer</h1>
+
+  <div class="path-info">HTML generated at: <code>/home/michaelod/CaloXAnalysis/html/event_display/viewer.html</code></div>
+  <div class="path-info">PNG directory: <code>/home/michaelod/CaloXAnalysis/plots/Run624/event_display</code></div>
+
+  <input type="text" id="filterInput" placeholder="Filter by filename..." onkeyup="filterPlots()">
+
+  <div id="plotContainer" class="grid">
+    <div class="plot" data-name="event_display_evt0_cer_png">
+      <div class="filename">event_display_Evt0_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt0_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt0_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt0_sci_png">
+      <div class="filename">event_display_Evt0_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt0_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt0_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt1_cer_png">
+      <div class="filename">event_display_Evt1_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt1_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt1_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt1_sci_png">
+      <div class="filename">event_display_Evt1_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt1_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt1_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt2_cer_png">
+      <div class="filename">event_display_Evt2_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt2_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt2_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt2_sci_png">
+      <div class="filename">event_display_Evt2_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt2_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt2_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt3_cer_png">
+      <div class="filename">event_display_Evt3_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt3_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt3_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt3_sci_png">
+      <div class="filename">event_display_Evt3_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt3_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt3_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt4_cer_png">
+      <div class="filename">event_display_Evt4_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt4_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt4_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt4_sci_png">
+      <div class="filename">event_display_Evt4_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt4_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt4_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt5_cer_png">
+      <div class="filename">event_display_Evt5_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt5_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt5_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt5_sci_png">
+      <div class="filename">event_display_Evt5_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt5_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt5_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt6_cer_png">
+      <div class="filename">event_display_Evt6_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt6_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt6_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt6_sci_png">
+      <div class="filename">event_display_Evt6_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt6_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt6_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt7_cer_png">
+      <div class="filename">event_display_Evt7_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt7_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt7_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt7_sci_png">
+      <div class="filename">event_display_Evt7_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt7_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt7_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt8_cer_png">
+      <div class="filename">event_display_Evt8_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt8_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt8_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt8_sci_png">
+      <div class="filename">event_display_Evt8_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt8_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt8_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt9_cer_png">
+      <div class="filename">event_display_Evt9_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt9_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt9_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt9_sci_png">
+      <div class="filename">event_display_Evt9_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt9_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt9_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt10_cer_png">
+      <div class="filename">event_display_Evt10_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt10_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt10_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt10_sci_png">
+      <div class="filename">event_display_Evt10_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt10_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt10_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt11_cer_png">
+      <div class="filename">event_display_Evt11_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt11_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt11_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt11_sci_png">
+      <div class="filename">event_display_Evt11_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt11_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt11_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt12_cer_png">
+      <div class="filename">event_display_Evt12_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt12_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt12_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt12_sci_png">
+      <div class="filename">event_display_Evt12_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt12_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt12_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt13_cer_png">
+      <div class="filename">event_display_Evt13_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt13_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt13_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt13_sci_png">
+      <div class="filename">event_display_Evt13_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt13_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt13_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt14_cer_png">
+      <div class="filename">event_display_Evt14_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt14_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt14_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt14_sci_png">
+      <div class="filename">event_display_Evt14_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt14_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt14_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt15_cer_png">
+      <div class="filename">event_display_Evt15_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt15_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt15_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt15_sci_png">
+      <div class="filename">event_display_Evt15_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt15_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt15_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt16_cer_png">
+      <div class="filename">event_display_Evt16_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt16_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt16_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt16_sci_png">
+      <div class="filename">event_display_Evt16_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt16_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt16_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt17_cer_png">
+      <div class="filename">event_display_Evt17_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt17_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt17_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt17_sci_png">
+      <div class="filename">event_display_Evt17_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt17_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt17_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt18_cer_png">
+      <div class="filename">event_display_Evt18_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt18_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt18_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt18_sci_png">
+      <div class="filename">event_display_Evt18_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt18_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt18_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt19_cer_png">
+      <div class="filename">event_display_Evt19_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt19_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt19_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt19_sci_png">
+      <div class="filename">event_display_Evt19_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt19_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt19_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt20_cer_png">
+      <div class="filename">event_display_Evt20_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt20_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt20_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt20_sci_png">
+      <div class="filename">event_display_Evt20_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt20_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt20_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt21_cer_png">
+      <div class="filename">event_display_Evt21_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt21_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt21_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt21_sci_png">
+      <div class="filename">event_display_Evt21_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt21_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt21_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt22_cer_png">
+      <div class="filename">event_display_Evt22_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt22_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt22_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt22_sci_png">
+      <div class="filename">event_display_Evt22_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt22_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt22_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt23_cer_png">
+      <div class="filename">event_display_Evt23_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt23_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt23_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt23_sci_png">
+      <div class="filename">event_display_Evt23_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt23_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt23_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt24_cer_png">
+      <div class="filename">event_display_Evt24_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt24_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt24_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt24_sci_png">
+      <div class="filename">event_display_Evt24_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt24_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt24_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt25_cer_png">
+      <div class="filename">event_display_Evt25_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt25_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt25_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt25_sci_png">
+      <div class="filename">event_display_Evt25_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt25_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt25_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt26_cer_png">
+      <div class="filename">event_display_Evt26_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt26_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt26_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt26_sci_png">
+      <div class="filename">event_display_Evt26_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt26_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt26_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt27_cer_png">
+      <div class="filename">event_display_Evt27_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt27_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt27_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt27_sci_png">
+      <div class="filename">event_display_Evt27_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt27_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt27_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt28_cer_png">
+      <div class="filename">event_display_Evt28_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt28_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt28_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt28_sci_png">
+      <div class="filename">event_display_Evt28_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt28_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt28_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt29_cer_png">
+      <div class="filename">event_display_Evt29_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt29_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt29_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt29_sci_png">
+      <div class="filename">event_display_Evt29_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt29_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt29_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt30_cer_png">
+      <div class="filename">event_display_Evt30_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt30_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt30_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt30_sci_png">
+      <div class="filename">event_display_Evt30_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt30_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt30_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt31_cer_png">
+      <div class="filename">event_display_Evt31_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt31_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt31_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt31_sci_png">
+      <div class="filename">event_display_Evt31_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt31_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt31_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt32_cer_png">
+      <div class="filename">event_display_Evt32_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt32_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt32_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt32_sci_png">
+      <div class="filename">event_display_Evt32_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt32_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt32_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt33_cer_png">
+      <div class="filename">event_display_Evt33_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt33_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt33_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt33_sci_png">
+      <div class="filename">event_display_Evt33_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt33_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt33_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt34_cer_png">
+      <div class="filename">event_display_Evt34_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt34_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt34_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt34_sci_png">
+      <div class="filename">event_display_Evt34_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt34_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt34_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt35_cer_png">
+      <div class="filename">event_display_Evt35_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt35_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt35_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt35_sci_png">
+      <div class="filename">event_display_Evt35_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt35_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt35_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt36_cer_png">
+      <div class="filename">event_display_Evt36_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt36_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt36_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt36_sci_png">
+      <div class="filename">event_display_Evt36_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt36_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt36_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt37_cer_png">
+      <div class="filename">event_display_Evt37_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt37_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt37_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt37_sci_png">
+      <div class="filename">event_display_Evt37_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt37_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt37_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt38_cer_png">
+      <div class="filename">event_display_Evt38_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt38_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt38_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt38_sci_png">
+      <div class="filename">event_display_Evt38_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt38_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt38_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt39_cer_png">
+      <div class="filename">event_display_Evt39_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt39_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt39_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt39_sci_png">
+      <div class="filename">event_display_Evt39_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt39_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt39_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt40_cer_png">
+      <div class="filename">event_display_Evt40_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt40_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt40_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt40_sci_png">
+      <div class="filename">event_display_Evt40_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt40_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt40_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt41_cer_png">
+      <div class="filename">event_display_Evt41_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt41_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt41_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt41_sci_png">
+      <div class="filename">event_display_Evt41_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt41_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt41_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt42_cer_png">
+      <div class="filename">event_display_Evt42_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt42_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt42_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt42_sci_png">
+      <div class="filename">event_display_Evt42_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt42_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt42_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt43_cer_png">
+      <div class="filename">event_display_Evt43_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt43_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt43_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt43_sci_png">
+      <div class="filename">event_display_Evt43_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt43_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt43_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt44_cer_png">
+      <div class="filename">event_display_Evt44_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt44_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt44_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt44_sci_png">
+      <div class="filename">event_display_Evt44_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt44_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt44_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt45_cer_png">
+      <div class="filename">event_display_Evt45_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt45_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt45_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt45_sci_png">
+      <div class="filename">event_display_Evt45_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt45_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt45_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt46_cer_png">
+      <div class="filename">event_display_Evt46_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt46_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt46_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt46_sci_png">
+      <div class="filename">event_display_Evt46_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt46_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt46_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt47_cer_png">
+      <div class="filename">event_display_Evt47_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt47_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt47_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt47_sci_png">
+      <div class="filename">event_display_Evt47_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt47_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt47_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt48_cer_png">
+      <div class="filename">event_display_Evt48_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt48_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt48_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt48_sci_png">
+      <div class="filename">event_display_Evt48_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt48_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt48_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt49_cer_png">
+      <div class="filename">event_display_Evt49_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt49_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt49_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt49_sci_png">
+      <div class="filename">event_display_Evt49_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt49_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt49_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt50_cer_png">
+      <div class="filename">event_display_Evt50_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt50_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt50_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt50_sci_png">
+      <div class="filename">event_display_Evt50_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt50_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt50_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt51_cer_png">
+      <div class="filename">event_display_Evt51_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt51_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt51_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt51_sci_png">
+      <div class="filename">event_display_Evt51_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt51_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt51_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt52_cer_png">
+      <div class="filename">event_display_Evt52_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt52_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt52_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt52_sci_png">
+      <div class="filename">event_display_Evt52_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt52_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt52_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt53_cer_png">
+      <div class="filename">event_display_Evt53_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt53_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt53_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt53_sci_png">
+      <div class="filename">event_display_Evt53_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt53_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt53_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt54_cer_png">
+      <div class="filename">event_display_Evt54_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt54_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt54_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt54_sci_png">
+      <div class="filename">event_display_Evt54_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt54_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt54_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt55_cer_png">
+      <div class="filename">event_display_Evt55_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt55_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt55_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt55_sci_png">
+      <div class="filename">event_display_Evt55_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt55_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt55_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt56_cer_png">
+      <div class="filename">event_display_Evt56_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt56_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt56_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt56_sci_png">
+      <div class="filename">event_display_Evt56_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt56_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt56_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt57_cer_png">
+      <div class="filename">event_display_Evt57_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt57_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt57_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt57_sci_png">
+      <div class="filename">event_display_Evt57_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt57_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt57_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt58_cer_png">
+      <div class="filename">event_display_Evt58_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt58_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt58_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt58_sci_png">
+      <div class="filename">event_display_Evt58_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt58_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt58_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt59_cer_png">
+      <div class="filename">event_display_Evt59_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt59_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt59_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt59_sci_png">
+      <div class="filename">event_display_Evt59_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt59_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt59_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt60_cer_png">
+      <div class="filename">event_display_Evt60_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt60_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt60_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt60_sci_png">
+      <div class="filename">event_display_Evt60_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt60_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt60_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt61_cer_png">
+      <div class="filename">event_display_Evt61_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt61_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt61_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt61_sci_png">
+      <div class="filename">event_display_Evt61_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt61_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt61_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt62_cer_png">
+      <div class="filename">event_display_Evt62_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt62_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt62_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt62_sci_png">
+      <div class="filename">event_display_Evt62_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt62_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt62_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt63_cer_png">
+      <div class="filename">event_display_Evt63_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt63_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt63_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt63_sci_png">
+      <div class="filename">event_display_Evt63_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt63_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt63_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt64_cer_png">
+      <div class="filename">event_display_Evt64_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt64_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt64_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt64_sci_png">
+      <div class="filename">event_display_Evt64_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt64_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt64_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt65_cer_png">
+      <div class="filename">event_display_Evt65_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt65_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt65_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt65_sci_png">
+      <div class="filename">event_display_Evt65_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt65_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt65_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt66_cer_png">
+      <div class="filename">event_display_Evt66_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt66_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt66_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt66_sci_png">
+      <div class="filename">event_display_Evt66_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt66_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt66_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt67_cer_png">
+      <div class="filename">event_display_Evt67_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt67_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt67_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt67_sci_png">
+      <div class="filename">event_display_Evt67_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt67_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt67_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt68_cer_png">
+      <div class="filename">event_display_Evt68_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt68_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt68_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt68_sci_png">
+      <div class="filename">event_display_Evt68_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt68_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt68_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt69_cer_png">
+      <div class="filename">event_display_Evt69_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt69_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt69_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt69_sci_png">
+      <div class="filename">event_display_Evt69_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt69_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt69_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt70_cer_png">
+      <div class="filename">event_display_Evt70_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt70_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt70_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt70_sci_png">
+      <div class="filename">event_display_Evt70_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt70_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt70_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt71_cer_png">
+      <div class="filename">event_display_Evt71_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt71_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt71_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt71_sci_png">
+      <div class="filename">event_display_Evt71_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt71_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt71_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt72_cer_png">
+      <div class="filename">event_display_Evt72_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt72_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt72_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt72_sci_png">
+      <div class="filename">event_display_Evt72_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt72_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt72_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt73_cer_png">
+      <div class="filename">event_display_Evt73_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt73_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt73_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt73_sci_png">
+      <div class="filename">event_display_Evt73_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt73_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt73_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt74_cer_png">
+      <div class="filename">event_display_Evt74_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt74_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt74_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt74_sci_png">
+      <div class="filename">event_display_Evt74_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt74_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt74_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt75_cer_png">
+      <div class="filename">event_display_Evt75_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt75_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt75_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt75_sci_png">
+      <div class="filename">event_display_Evt75_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt75_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt75_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt76_cer_png">
+      <div class="filename">event_display_Evt76_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt76_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt76_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt76_sci_png">
+      <div class="filename">event_display_Evt76_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt76_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt76_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt77_cer_png">
+      <div class="filename">event_display_Evt77_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt77_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt77_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt77_sci_png">
+      <div class="filename">event_display_Evt77_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt77_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt77_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt78_cer_png">
+      <div class="filename">event_display_Evt78_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt78_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt78_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt78_sci_png">
+      <div class="filename">event_display_Evt78_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt78_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt78_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt79_cer_png">
+      <div class="filename">event_display_Evt79_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt79_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt79_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt79_sci_png">
+      <div class="filename">event_display_Evt79_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt79_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt79_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt80_cer_png">
+      <div class="filename">event_display_Evt80_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt80_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt80_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt80_sci_png">
+      <div class="filename">event_display_Evt80_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt80_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt80_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt81_cer_png">
+      <div class="filename">event_display_Evt81_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt81_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt81_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt81_sci_png">
+      <div class="filename">event_display_Evt81_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt81_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt81_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt82_cer_png">
+      <div class="filename">event_display_Evt82_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt82_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt82_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt82_sci_png">
+      <div class="filename">event_display_Evt82_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt82_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt82_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt83_cer_png">
+      <div class="filename">event_display_Evt83_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt83_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt83_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt83_sci_png">
+      <div class="filename">event_display_Evt83_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt83_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt83_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt84_cer_png">
+      <div class="filename">event_display_Evt84_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt84_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt84_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt84_sci_png">
+      <div class="filename">event_display_Evt84_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt84_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt84_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt85_cer_png">
+      <div class="filename">event_display_Evt85_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt85_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt85_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt85_sci_png">
+      <div class="filename">event_display_Evt85_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt85_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt85_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt86_cer_png">
+      <div class="filename">event_display_Evt86_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt86_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt86_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt86_sci_png">
+      <div class="filename">event_display_Evt86_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt86_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt86_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt87_cer_png">
+      <div class="filename">event_display_Evt87_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt87_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt87_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt87_sci_png">
+      <div class="filename">event_display_Evt87_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt87_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt87_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt88_cer_png">
+      <div class="filename">event_display_Evt88_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt88_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt88_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt88_sci_png">
+      <div class="filename">event_display_Evt88_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt88_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt88_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt89_cer_png">
+      <div class="filename">event_display_Evt89_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt89_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt89_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt89_sci_png">
+      <div class="filename">event_display_Evt89_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt89_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt89_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt90_cer_png">
+      <div class="filename">event_display_Evt90_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt90_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt90_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt90_sci_png">
+      <div class="filename">event_display_Evt90_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt90_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt90_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt91_cer_png">
+      <div class="filename">event_display_Evt91_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt91_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt91_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt91_sci_png">
+      <div class="filename">event_display_Evt91_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt91_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt91_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt92_cer_png">
+      <div class="filename">event_display_Evt92_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt92_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt92_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt92_sci_png">
+      <div class="filename">event_display_Evt92_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt92_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt92_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt93_cer_png">
+      <div class="filename">event_display_Evt93_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt93_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt93_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt93_sci_png">
+      <div class="filename">event_display_Evt93_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt93_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt93_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt94_cer_png">
+      <div class="filename">event_display_Evt94_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt94_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt94_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt94_sci_png">
+      <div class="filename">event_display_Evt94_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt94_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt94_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt95_cer_png">
+      <div class="filename">event_display_Evt95_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt95_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt95_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt95_sci_png">
+      <div class="filename">event_display_Evt95_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt95_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt95_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt96_cer_png">
+      <div class="filename">event_display_Evt96_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt96_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt96_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt96_sci_png">
+      <div class="filename">event_display_Evt96_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt96_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt96_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt97_cer_png">
+      <div class="filename">event_display_Evt97_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt97_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt97_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt97_sci_png">
+      <div class="filename">event_display_Evt97_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt97_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt97_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt98_cer_png">
+      <div class="filename">event_display_Evt98_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt98_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt98_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt98_sci_png">
+      <div class="filename">event_display_Evt98_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt98_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt98_Sci.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt99_cer_png">
+      <div class="filename">event_display_Evt99_Cer.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt99_Cer.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt99_Cer.png" alt="">
+      </a>
+    </div>
+    <div class="plot" data-name="event_display_evt99_sci_png">
+      <div class="filename">event_display_Evt99_Sci.png</div>
+      <a href="../../plots/Run624/event_display/event_display_Evt99_Sci.png" target="_blank">
+        <img src="../../plots/Run624/event_display/event_display_Evt99_Sci.png" alt="">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function filterPlots() {
+      const filter = document.getElementById("filterInput").value.toLowerCase();
+      const plots = document.getElementsByClassName("plot");
+
+      for (let plot of plots) {
+        const name = plot.getAttribute("data-name");
+        plot.style.display = name.includes(filter) ? "" : "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
